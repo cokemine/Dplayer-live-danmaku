@@ -1,6 +1,6 @@
 # Dplayer-live-danmaku
 
-A Easy danmaku backend for Dplayer Live Mode using websocket
+A Easy danmaku backend for Dplayer Live Mode using websocket.
 
 通过websocket简单实现Dplayer直播的弹幕后端
 
@@ -10,6 +10,8 @@ A Easy danmaku backend for Dplayer Live Mode using websocket
 apt install python3 python3-pip
 pip install websockets
 ```
+
+This repo has been deprecated, please see https://github.com/CokeMine/Nginx_Live_DPlayer
 
 ## Thanks
 

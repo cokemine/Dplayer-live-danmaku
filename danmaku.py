@@ -1,3 +1,4 @@
+import sys
 import asyncio
 import websockets
 
@@ -19,10 +20,14 @@ async def danmaku(ws, path):
         USERS.remove(ws)
 
 
-async def start():
-    server = await websockets.serve(danmaku, 'localhost', 8765)
+async def start(PORT):
+    server = await websockets.serve(danmaku, '127.0.0.1', PORT)
+    print("Websocket is running at PORT: %d" % PORT)
     await server.wait_closed()
 
 
 if __name__ == '__main__':
-    asyncio.run(start())
+    if len(sys.argv) != 2:
+        print("You haven't set the port of websocket!")
+        exit(1)
+    asyncio.run(start(int(sys.argv[1])))
